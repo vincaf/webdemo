@@ -35,10 +35,8 @@ public class ProvinceJpaDAO extends AbstractJpaDAO<Provincia, Integer> {
 		province.forEach(log::debug);
 
 		em.close();
-		emf.close();
+		//emf.close();
 		return province;
 	}
-
-
 
 }
