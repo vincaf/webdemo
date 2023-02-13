@@ -12,6 +12,7 @@
 		<class>com.example.database.entity.Comune</class>
 		<class>com.example.database.entity.Provincia</class>
 		<class>com.example.database.entity.Regione</class>
+		<class>com.example.database.entity.Cliente</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
