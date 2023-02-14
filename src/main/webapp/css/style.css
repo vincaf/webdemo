@@ -1,0 +1,32 @@
+.container{
+    padding: 0 20px;
+}
+
+p{
+    font-style: italic;
+    margin: 20px 0;
+}
+
+img{
+    height: 350px;
+    margin: 15px 70px;
+}
+
+img:hover{
+    scale: 1.1;
+}
+
+.subtitle{
+    padding: 5px;
+    border: 2px solid #0d6efd;
+}
+
+.subtitle:hover{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.highlight{
+    font-weight: bold;
+    font-style: normal;
+}
