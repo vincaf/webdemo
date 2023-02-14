@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    border: 1px solid;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+th{
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: normal;
+    text-align: start;
+}
+
+table tr:nth-child(odd) {
+    background-color: white;
+}
+  
+table tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+tr:hover{
+    cursor: pointer;
+    border: 3px solid #0d6efd;
+}
