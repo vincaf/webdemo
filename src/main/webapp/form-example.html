@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio HTML Form</title>
+</head>
+<body>
+    <h1>Esempio HTML Form</h1>
+    
+    <h3>Form ricerca su DuckDuckGo</h3>
+    <!-- https://duckduckgo.com/?q=java&t=h_&ia=web
+        esempio query da formare per la ricerca su duckduckgo
+        querystring ==> q=java&t=h_&ia=web ==> q=java, t=h_, ia=web -->
+
+    <form action="https://duckduckgo.com" method="GET" target="_blank">
+        <label for="ricerca">Stringa da ricercare</label>
+        <input type="text" id="ricerca" placeholder="Digita un testo da ricercare" name="q">
+        <input type="hidden" value="h_" name="t">
+        <input type="hidden" value="web" id="ia">
+        <input type="submit" value="Invia">
+    </form>
+
+    <h3>Form ricerca su Google</h3>    
+    <!-- https://www.google.com/search?q=java&rlz=1C1ONGR_itIT994IT995&oq=java&aqs=chrome..69i57j69i59j35i39j0i433i512j0i131i433i512l6.902j0j15&sourceid=chrome&ie=UTF-8
+        esempio query da formare per la ricerca su google
+        querystring ==> q=java&rlz=1C1ONGR_itIT994IT995&oq=java&aqs=chrome ==> q=java, rlz=1C1ONGR_, aqs=chrome -->
+
+    <form action="https://google.com/search" method="GET" target="_blank">
+        <label for="ricerca">Stringa da ricercare su Google</label>
+        <input type="text" id="ricerca" placeholder="Digita un testo da ricercare" name="q">
+        <input type="hidden" value="1C1ONGR_" name="rlz">
+        <input type="hidden" value="chrome" id="aqs">
+        <input type="submit" value="Invia">
+    </form>
+</body>
+</html>

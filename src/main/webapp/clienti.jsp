@@ -17,7 +17,7 @@
 	List<Cliente> clienti = (List<Cliente>)request.getAttribute("lista.clienti");
 	%>
 
-	<table border="1">
+	<table>
 		<tr>
 			<th>#</th>
 			<th>Nome</th>
