@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Comparator" %>
 <%@ page import="com.example.database.entity.Cliente" %>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,14 @@
 	<h1>Elenco dei Clienti</h1>
 	<%
 	List<Cliente> clienti = (List<Cliente>)request.getAttribute("lista.clienti");
+	
+	/* per stampare una lista con ordine decrescente per id
+	 Comparator<Cliente> cl = (x, x1) -> { 
+	 	return x1.getIdCliente() - x.getIdCliente(); 
+	 };
+	 clienti = clienti.stream().sorted(cl).toList();
+	*/
+	
 	%>
 
 	<table>
@@ -42,5 +51,40 @@
 		</tr>
 		<%} %>
 	</table>
+
+	<h3>Inserimento Cliente</h3>
+    <form action="./ClientiServlet" method="post">
+		<div>
+			<label for="nome">Nome</label>
+			<input type="text" id="nome" name="nome">
+		</div>
+		<div>
+			<label for="nome">Cognome</label>
+			<input type="text" id="cognome" name="cognome">
+		</div>
+		<div>
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email">
+		</div>
+		<div>
+			<label for="indirizzo">Indirizzo</label>
+			<input type="text" id="indirizzo" name="indirizzo">
+		</div>
+		<div>
+			<label for="citta">Città</label>
+			<input type="text" id="citta" name="citta">
+		</div>
+		<div>
+			<label for="provincia">Provincia</label>
+			<input type="text" id="provincia" name="provincia" maxlength="2">
+		</div>
+		<div>
+			<label for="cap">CAP</label>
+			<input type="number" id="cap" name="cap" maxlength="5">
+		</div>
+		<div>
+			<input type="submit" value="Invia">
+		</div>
+    </form>
 </body>
 </html>

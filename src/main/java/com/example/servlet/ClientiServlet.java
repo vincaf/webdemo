@@ -3,6 +3,10 @@ package com.example.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -69,6 +73,37 @@ public class ClientiServlet extends HttpServlet {
   RequestDispatcher rd = request.getRequestDispatcher("clienti.jsp");
   rd.forward(request, response);
 
+ }
+
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	log.trace("Attivazione del doPost() da parte del container...");
+
+	String nome = req.getParameter("nome");
+	String cognome = req.getParameter("cognome");
+	String email = req.getParameter("email");
+	String indirizzo = req.getParameter("indirizzo");
+	String citta = req.getParameter("citta");
+	String provincia = req.getParameter("provincia");
+	String cap = req.getParameter("cap");
+	log.debug("{} {} {} {} {} {} {}", nome, cognome, email, indirizzo, citta, provincia, cap);
+
+	Cliente cliente = new Cliente();
+	cliente.setNome(nome);
+	cliente.setCognome(cognome);
+	cliente.setEmail(email);
+	cliente.setIndirizzo(indirizzo);
+	cliente.setCitta(citta);
+	cliente.setProvincia(provincia);
+	cliente.setCap(cap);
+	
+	log.debug(cliente);
+	
+	DAO<Cliente, Integer> dao = new ClientiJpaDAO();
+	Cliente clienteAggiunto = dao.create(cliente);
+	log.debug(clienteAggiunto);
+	
+	doGet(req, resp);
  }
 
 }

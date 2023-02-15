@@ -100,4 +100,27 @@ public class Cliente implements Serializable {
 		this.provincia = provincia;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cliente [idCliente=");
+		builder.append(idCliente);
+		builder.append(", cap=");
+		builder.append(cap);
+		builder.append(", citta=");
+		builder.append(citta);
+		builder.append(", cognome=");
+		builder.append(cognome);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", indirizzo=");
+		builder.append(indirizzo);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", provincia=");
+		builder.append(provincia);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

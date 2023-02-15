@@ -39,5 +39,16 @@ public class ClientiJpaDAO extends AbstractJpaDAO<Cliente, Integer> {
 		//emf.close();
 		return clienti;
 	}
+	
+	@Override
+	public Cliente create(Cliente entity) {
+		EntityManager em = emf.createEntityManager();
+		log.trace("EntityManager creato");
+		
+		em.getTransaction().begin();
+		em.persist(entity);
+		em.getTransaction().commit();
+		return entity;
+	}
 
 }
