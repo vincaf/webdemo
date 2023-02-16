@@ -15,7 +15,7 @@ var t = 700;
 // usare sempre let perchè definisce una variabile con il funzionamento delle variabili in Java
 
 if (k > t) {
-  console.log("console.log(k > t");
+  console.log("console.log(k > t)");
   let tt = 98;
 } else {
   console.log("console.log(k <= t)");
